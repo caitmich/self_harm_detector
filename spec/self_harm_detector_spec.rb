@@ -23,6 +23,8 @@ RSpec.describe SelfHarmDetector do
     end
     it "detects self harm intent even if punctuation changes" do 
       expect(SelfHarmDetector.detect(text: "I want to hurt myself!")).to be 1
+      expect(SelfHarmDetector.detect(text: "Demons are pulling me under")).to be 1
+      expect(SelfHarmDetector.detect(text: "demons are pulling me under")).to be 1
     end
     
   end
